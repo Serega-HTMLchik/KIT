@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab3</title>
+    <style>
+        *{
+           margin:0;
+        padding:0;
+        border:0; 
+        }
+        
+        .nav-link{
+            color: #fff!important;
+        } 
+        .menu{
+            justify-content: center;
+        }
+        li{
+            list-style-type: none;
+        }
+        .menu-right{
+            justify-content:flex-end;
+        }
+        .padding-menu{
+            padding: 20px 16px;
+        }
+        .menu_item{
+            text-decoration: none;
+            color: white;
+        }
+        .menu_poisk{
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        .searh{
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .poisk{
+            background-color: #fff;
+            border-radius: 40px;
+        }
+        .btn-poisk{
+            display: flex;
+            
+            width:48px;
+            height:48px;
+            background-color: #FF385C;
+            border-radius: 24px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        .btn-poisk:hover{
+            background-color: #ba2742;
+        }
+        .li-poisk{
+            height: 100%;
+        }
+        .li-poisk:hover{
+            background-color: antiquewhite;
+            cursor: pointer;
+        }
+        .background{
+            background-color:#fff;
+            cursor: pointer;
+        }
+        .background:hover{
+            background-color: #DDDDDD;
+        }
+        .centr-align-items{
+            display: inline-flex;
+            height: 100%; 
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn-gib-search{
+            
+            width: 232px;
+            height: 64px;
+            border-radius: 45px;
+            background-color: #fff;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            line-height: 60px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .btn-gib-search:hover{
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+        }
+        .grad{
+            background: linear-gradient(90deg,red, blue); /* Градиент для текста */
+            -webkit-background-clip: text; /* Обрезаем фон по тексту */
+            -webkit-text-fill-color: transparent;
+        }
+        .img-icon{
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+        }
+        .card-city{
+           display: inline-flex;
+           align-items: center;
+           height: 64px;
+           line-height: 64px;
+           padding-left: 10px; 
+        }
+        .column-city{
+            display: inline-flex;
+            flex-direction: column;
+            line-height: 25px;
+            align-self: auto;
+        }
+        .card_city{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        @media(max-width: 1080px) {
+            .mob-adap {
+                display: flex!important;
+            }
+            .desctop-adap{
+                display: none!important;
+            }
+   }
+        @media(max-width: 990px) {
+            .rel-top{
+                top:100px!important;
+            }
+            .sdacha{
+                display: none!important;
+            }
+            .logo-adap-desct{
+                display: none!important;
+            }
+   }
+         @media(max-width: 710px){
+             .mob-adap-2{
+                 display: flex!important;
+             }
+             .mob-adap {
+                display: none!important;
+            }
+        }
+        @media(max-width: 430px){
+            .grad{
+                font-size: 14px!important;
+            }
+        }
+        .txt-live{
+            font-size: 16px;
+            font-weight: 600;
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid overflow-hidden" style="background-image: url(https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560); height: 94vh; padding: 0;background-size:cover; background-repeat:no-repeat; background-position: center; width: 100%;">
+      <div class="alert alert-dark" role="alert" style="text-align: center; color: #A3A3A3CC; background-color: #222222;border:0;border-radius: 0; margin-bottom: 0; box-shadow: 0 0 70px rgba(0,0,0,1);">
+          Актуальная информация: наши действия во время пандемии
+        </div>
+           
+           <div class="row">
+                <div class="col-3 d-flex logo-adap-desct" style="justify-content:center;">
+                  <a class="navbar-brand logo-adap-desct" href="#"><img width="160" src="ce2adf99-758f-4b2a-9a32-433ce3b8198b_Airbnb-Logo.png"></a>
+                </div>
+                <div class="col-6">
+                         <ul class="menu d-flex">
+                             <li class="padding-menu"><a class="menu_item" href="#">Жилье</a></li>
+                             <li class="padding-menu"><a class="menu_item" href="#">Впечатления</a></li>
+                             <li class="padding-menu"><a class="menu_item" href="#">Онлайн</a></li>
+                         </ul>
+                </div>
+                <div class="col-3 sdacha" align="rifht">
+                  <ul class="menu-right d-flex">
+                  <li class="padding-menu">
+                    <a class="menu_item" href="#">Сдайте жилье</a>
+                  </li>
+                  <li class="padding-menu">
+                      <a href="#"><img width="16" src="world-wide-web%201.png"></a>
+                  </li>
+                    </ul>
+                </div>
+            </div>
+            <!--Мобильная версия начало-->
+            <div class="row row-centered row-conformity mob-adap" style="justify-content: center; height: 66px;line-height: 30px; display: none;">
+               
+                <div class="col-2 background" style="border-radius: 45px 0 0 45px;">
+                   <div class="centr-align-items">
+                    <div style="display: flex; flex-direction: column; height: 100%">
+                        <div class="menu_poisk" style="text-align: center;">Местоположение</div>
+                        <div style="text-align: center;">Куда едете?</div>
+                    </div>
+                    </div>
+                </div>
+               <div class="col-1 background">
+                 <div class="centr-align-items">
+                  <div style="display: flex; flex-direction: column;">
+                       <div class="menu_poisk" style="text-align: center;">Прибытие</div>
+                       <div style="text-align: center;">Когда?</div>
+                    </div>
+                   </div>
+                </div>
+               <div class="col-1 background" style="justify-content: center;">
+                  <div class="centr-align-items">
+                   <div style="display: flex; flex-direction: column;">
+                       <div class="menu_poisk" style="text-align: center;">Выезд</div>
+                       <div style="text-align: center;">Когда?</div>
+                    </div>
+                   </div>
+                </div>
+               <div class="col-3 background" style="border-radius: 0 45px 45px 0;">
+                   <div class="otsled" style="display: inline-flex; height: 100%; align-items: center; width: 100%;justify-content: space-between;">
+                       <div style="display: flex; flex-direction: column;">
+                           <div class="menu_poisk" style="text-align: center;">Количество гостей</div>
+                           <div style="text-align: center;">Кто едет?</div>
+                        </div>
+                       <div class="btn-poisk"><img src="search%201.png" width="16px" height="16px" style="margin-left: auto; margin-right: auto; line-height: 64px; margin-top: 16px;"></div>
+                    </div>
+                </div>
+            </div>
+            <!--Мобильная версия конец-->
+            <!--Сверхмалые экраны-->
+            <div class="row row-centered row-conformity mob-adap-2" style="justify-content: center; height: 66px;line-height: 30px; display: none;">
+               
+                <div class="col-10 background" style="border-radius: 45px;">
+                   <div class="centr-align-items">Куда едете?</div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class="row row-centered row-conformity desctop-adap" style="justify-content: center; height: 66px;line-height: 30px;">
+               
+                <div class="col-2 background" style="border-radius: 45px 0 0 45px;">
+                   <div class="centr-align-items">
+                    <div style="display: flex; flex-direction: column; height: 100%">
+                        <div class="menu_poisk" style="text-align: center;">Местоположение</div>
+                        <div style="text-align: center;">Куда едете?</div>
+                    </div>
+                    </div>
+                </div>
+               <div class="col-2 background">
+                 <div class="centr-align-items">
+                  <div style="display: flex; flex-direction: column;">
+                       <div class="menu_poisk" style="text-align: center;">Прибытие</div>
+                       <div style="text-align: center;">Когда?</div>
+                    </div>
+                   </div>
+                </div>
+               <div class="col-2 background" style="justify-content: center;">
+                  <div class="centr-align-items">
+                   <div style="display: flex; flex-direction: column;">
+                       <div class="menu_poisk" style="text-align: center;">Выезд</div>
+                       <div style="text-align: center;">Когда?</div>
+                    </div>
+                   </div>
+                </div>
+               <div class="col-2 background" style="border-radius: 0 45px 45px 0;">
+                   <div class="otsled" style="display: inline-flex; height: 100%; align-items: center; width: 100%;justify-content: space-between;">
+                       <div style="display: flex; flex-direction: column;">
+                           <div class="menu_poisk" style="text-align: center;">Количество гостей</div>
+                           <div style="text-align: center;">Кто едет?</div>
+                        </div>
+                       <div class="btn-poisk"><img src="search%201.png" width="16px" height="16px" style="margin-left: auto; margin-right: auto; line-height: 64px; margin-top: 16px;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row rel-top" style="justify-content: center; position: relative; top: 250px;">
+                <div class="col-4">
+                    <div style="display: flex; flex-direction: column;">
+                       <div class="menu_poisk" style="text-align: center; font-size: 18px;">Не знаете, куда поехать? Отлично.</div>
+                        <div  style="text-align: center; display: inline-flex;height: 100%; align-items: center;justify-content: center; width: 100%; margin-top: 20px;"><div class="btn-gib-search"><span class="grad">Гибкий поиск</span></div></div>
+                    </div>
+                </div>
+            </div>
+            
+
+        
+    </div>
+    <div class="col-8" style="font-size: 32px; font-weight: 700; color: #222; padding-left: 80px; padding-top: 20px;">Жилье поблизости</div>
+    <div class="d-inline-flex" style="padding-left: 80px; padding-right: 80px; justify-content: space-between; width: 100%; flex-wrap: wrap;">
+       
+              <div class="col-md-3 d-flex card_city">
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center; line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+            
+             <div class="col-md-3 d-flex card_city">
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/e639b7ab-aee3-48ee-9743-216684a51319.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center;  line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+              
+              <div class="col-md-3 d-flex card_city" >
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/52e8083e-2de2-446d-a860-534eab250541.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center;  line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+               
+           <div class="col-md-3 d-flex card_city">
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/7253e011-7c22-48fd-b75d-d0da35372397.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center;  line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-3 d-flex card_city">
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/20e74de0-0eb8-4fca-afb8-b111875acdf5.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center;  line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-3 d-flex card_city">
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/ca3737ef-0faf-46ba-b055-b4a2d99e2cea.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center;  line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-3 d-flex card_city">
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/7c309a70-bc93-4603-8d3b-9d4cd9bf75b2.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center;  line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-3 d-flex card_city">
+                  <img class="d-inline-flex align-self-center" src="https://a0.muscache.com/im/pictures/585d1e53-e2e1-4baf-a34e-36301dd1e2da.jpg?im_q=medq&im_w=240"  style="width: 64px; border-radius: 12px;">
+                <div class="card-city">
+                    <div class="column-city">
+                        <div class="menu_poisk" style="text-align: center;  line-height: 10px;">Большой Сочи</div>
+                        <div style="text-align: center;">8,5 часов езды</div>
+                    </div>
+                  </div>
+            </div>
+        
+    </div>
+        <div class="col-8" style="font-size: 32px; font-weight: 700; color: #222; padding-left: 80px; padding-top: 50px; padding-bottom: 50px;">Живите где угодно</div>
+        
+        <div class="d-inline-flex" style="padding-left: 80px; padding-right: 80px; justify-content: space-between; width: 100%; flex-wrap: wrap;">
+       
+              <div class="col-sm-3 d-flex card_city" style="flex-direction: column; padding: 10px;">
+                  <img class="d-flex align-self-center" src="https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480"  style="display: block; width: 100%;max-width: 300px; border-radius: 12px;">
+                  <div class="txt-live" style="">Жилье на природе</div>
+            </div>
+            <div class="col-sm-3 d-flex card_city" style="flex-direction: column; padding: 10px;">
+                  <img class="d-flex align-self-center" src="https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480"  style="display: block; width: 100%;max-width: 300px; border-radius: 12px;">
+                  <div class="txt-live" style="">Жилье на природе</div>
+            </div>
+            <div class="col-sm-3 d-flex card_city" style="flex-direction: column;padding: 10px;">
+                  <img class="d-flex align-self-center" src="https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480"  style="display: block; width: 100%;max-width: 300px; border-radius: 12px;">
+                  <div class="txt-live" style="">Жилье на природе</div>
+            </div>
+            <div class="col-sm-3 d-flex card_city" style="flex-direction: column;padding: 10px;">
+                  <img class="d-flex align-self-center" src="https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480"  style="display: block; width: 100%;max-width: 300px; border-radius: 12px;">
+                  <div class="txt-live" style="">Жилье на природе</div>
+            </div>
+            
+             
+            
+        
+    </div>
+        <div class="row d-flex" style="margin: 0; justify-content: center;">
+            <a class="d-flex" href="#" style="padding: 0; justify-content: center;"><img class="col-11 d-flex" src="2595054e-d1d9-4fde-8046-58d51fcb3164.webp" style="justify-content: center; border-radius: 25px;"></a>
+        </div>
+    
+    <div class="col-8" style="font-size: 32px; font-weight: 700; color: #222; padding-left: 80px; padding-top: 50px; padding-bottom: 50px;">Чем заняться</div>
+        
+        <div class="d-inline-flex" style="padding-left: 80px; padding-right: 80px; justify-content: space-between; width: 100%; flex-wrap: wrap;">
+       
+              <div class="col-sm-4 d-flex card_city" style="flex-direction: column; padding: 10px;">
+                  <img class="d-flex align-self-center" src="ad109d56-2421-40cd-98e6-e114160dc85b.webp"  style="display: block; width: 100%;max-width: 480px; border-radius: 12px;">
+                  <div class="txt-live" style="">Впечатления</div>
+            </div>
+            <div class="col-sm-4 d-flex card_city" style="flex-direction: column; padding: 10px;">
+                  <img class="d-flex align-self-center" src="ad109d56-2421-40cd-98e6-e114160dc85b.webp"  style="display: block; width: 100%;max-width: 480px; border-radius: 12px;">
+                  <div class="txt-live" style="">Онлайн-Впечатления</div>
+            </div>
+            <div class="col-sm-4 d-flex card_city" style="flex-direction: column;padding: 10px;">
+                  <img class="d-flex align-self-center" src="ad109d56-2421-40cd-98e6-e114160dc85b.webp"  style="display: block; width: 100%;max-width: 480px; border-radius: 12px;">
+                  <div class="txt-live" style="">Популярная коллекция: тяга к путешествиям</div>
+            </div>
+            
+             
+            
+        
+    </div>
+    <div class="row d-flex" style="margin:70px 0 0 0; background-color: #F7F7F7; justify-content: center;">
+        <div class="col-11 d-flex" style="justify-content: center; flex-wrap: wrap;">
+          <div class="col-sm-3">
+           <h6>О НАС</h6>
+            <ul>
+                <li>Как устроена платформа Airbnb</li>
+                <li>Пресс-центр</li>
+                <li>Airbnb 2021</li>
+                <li>Для инвесторов</li>
+            </ul>
+            </div>
+            <div class="col-sm-3">
+           <h6>СООБЩЕСТВО</h6>
+            <ul>
+                <li>Как устроена платформа Airbnb</li>
+                <li>Пресс-центр</li>
+                <li>Airbnb 2021</li>
+                <li>Для инвесторов</li>
+            </ul>
+            </div>
+            <div class="col-sm-3">
+           <h6>ПРИНИМАЙТЕ ГОСТЕЙ</h6>
+            <ul>
+                <li>Как устроена платформа Airbnb</li>
+                <li>Пресс-центр</li>
+                <li>Airbnb 2021</li>
+                <li>Для инвесторов</li>
+            </ul>
+            </div>
+            <div class="col-sm-3">
+           <h6>ПОДДЕРЖКА</h6>
+            <ul>
+                <li>Как устроена платформа Airbnb</li>
+                <li>Пресс-центр</li>
+                <li>Airbnb 2021</li>
+                <li>Для инвесторов</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="script.js"></script>
+</body>
+</html>
