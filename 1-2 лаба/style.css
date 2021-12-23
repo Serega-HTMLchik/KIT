@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+.index-a{
+    text-align: center;
+    color: bisque;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+a{
+    text-decoration: none;
+    color: bisque;
+    
+}
+a:hover{
+    color: cadetblue;
+}
+
+.head-title{
+    text-align: center;
+    line-height: 100px;
+}
+.header{
+    width: 100%;
+    max-width: 800px;
+    background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer{
+    width: 100%;
+    max-width: 800px;
+    background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main{
+    display: flex;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.maincontent{
+    width: 65%;
+    max-width: 600px;
+    background-color: beige;
+    height:500;
+}
+.sidebar{
+    width: 35%;
+    max-width: 200px;
+    background-color:blueviolet;
+    height:500;
+}
+/*СТИЛИ ДЛЯ КАЛЬКУЛЯТОРА*/
+.flex-inline-calc{
+    display: inline-flex;
+}
+.input-calc{
+    width:30px;
+}
